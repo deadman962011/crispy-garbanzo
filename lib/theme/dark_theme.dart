@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shamel_user_app/util/app_constants.dart';
 
-ThemeData dark({Color color = const Color.fromRGBO(242, 157, 65, 1)}) => ThemeData(
+ThemeData dark({Color color = const Color(0xFF560BAD)}) => ThemeData(
   fontFamily: AppConstants.fontFamily,
   primaryColor: color,
-  secondaryHeaderColor: const Color.fromRGBO(242, 157, 65, 1),
+  secondaryHeaderColor: const Color(0xFF7209B7),
   disabledColor: const Color(0xffa2a7ad),
   brightness: Brightness.dark,
   hintColor: const Color(0xFFbebebe),
