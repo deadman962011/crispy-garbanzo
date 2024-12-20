@@ -4,13 +4,13 @@ import 'package:shamel_user_app/features/language/domain/models/language_model.d
 import 'package:shamel_user_app/util/images.dart';
 
 class AppConstants {
-  static const String appName = '6amMart';
+  static const String appName = 'Shamel';
   static const double appVersion = 2.9; ///Flutter Version: 3.22.3
 
   static const String fontFamily = 'Roboto';
   static const bool payInWevView = false;
   static const int balanceInputLen = 10;
-  static const String webHostedUrl = 'https://shamel.up.railway.app';
+  static const String webHostedUrl = 'https://www.shamel.website';
   static const bool useReactWebsite = false;
 
   static const String baseUrl = 'https://shamel.up.railway.app';
