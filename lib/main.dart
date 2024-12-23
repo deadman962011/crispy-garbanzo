@@ -61,7 +61,7 @@ Future<void> main() async {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
         apiKey: "AIzaSyD3Hu4m39nud6rpiosYZGw-TWkAYCmQJPg",
-        appId: "1:684951274231:web:b3848fdf8bcc7dc2d3c9f2",
+        appId: "1:684951274231:android:bae09b62284a5b7cd3c9f2",
         messagingSenderId: "684951274231",
         projectId: "shamelapp-fe234",
       ),
