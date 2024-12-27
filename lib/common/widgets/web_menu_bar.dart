@@ -228,7 +228,7 @@ class WebMenuBar extends StatelessWidget implements PreferredSizeWidget {
 
             Row(
               children: [
-                MenuButton(title: 'home'.tr, onTap: () {
+                MenuButton(title: 'main'.tr, onTap: () {
                   if(AddressHelper.getUserAddressFromSharedPref() != null) {
                     Get.toNamed(RouteHelper.getInitialRoute());
                   } else {

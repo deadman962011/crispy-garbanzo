@@ -238,7 +238,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       width: size.width, height: 80,
                                       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                                         BottomNavItemWidget(
-                                          title: 'home'.tr, selectedIcon: Images.homeSelect,
+                                          title: 'main'.tr, selectedIcon: Images.homeSelect,
                                           unSelectedIcon: Images.homeUnselect, isSelected: _pageIndex == 0,
                                           onTap: () => _setPage(0),
                                         ),
