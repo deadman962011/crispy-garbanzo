@@ -25,11 +25,7 @@
     </queries>
 
     <application
-<<<<<<< HEAD
-        android:label="shamel_user"
-=======
         android:label="Shamel"
->>>>>>> dev3
         android:name="${applicationName}"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
