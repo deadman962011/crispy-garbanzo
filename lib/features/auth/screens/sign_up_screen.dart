@@ -320,7 +320,7 @@ class SignUpScreenState extends State<SignUpScreen> {
   void _register(AuthController authController, String countryCode) async {
     String firstName = _firstNameController.text.trim();
     String lastName = _lastNameController.text.trim();
-    String email = _emailController.text.trim();
+    //String email = _emailController.text.trim();
     String number = _phoneController.text.trim();
     String password = _passwordController.text.trim();
     String confirmPassword = _confirmPasswordController.text.trim();
@@ -335,11 +335,13 @@ class SignUpScreenState extends State<SignUpScreen> {
         showCustomSnackBar('enter_your_first_name'.tr);
       }else if (lastName.isEmpty) {
         showCustomSnackBar('enter_your_last_name'.tr);
-      }else if (email.isEmpty) {
-        showCustomSnackBar('enter_email_address'.tr);
-      }else if (!GetUtils.isEmail(email)) {
-        showCustomSnackBar('enter_a_valid_email_address'.tr);
-      }else if (number.isEmpty) {
+      }
+      // else if (email.isEmpty) {
+      //   showCustomSnackBar('enter_email_address'.tr);
+      // }else if (!GetUtils.isEmail(email)) {
+      //   showCustomSnackBar('enter_a_valid_email_address'.tr);
+      // }
+      else if (number.isEmpty) {
         showCustomSnackBar('enter_phone_number'.tr);
       }else if (!phoneValid.isValid) {
         showCustomSnackBar('invalid_phone_number'.tr);
