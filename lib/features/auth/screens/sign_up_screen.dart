@@ -146,7 +146,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                           ]),
                           const SizedBox(height: Dimensions.paddingSizeExtraLarge),
 
-                          // Row(children: [
+                          Row(children: [
                           //   ResponsiveHelper.isDesktop(context) ? Expanded(
                           //     child: CustomTextField(
                           //       labelText: 'email'.tr,
@@ -162,26 +162,26 @@ class SignUpScreenState extends State<SignUpScreen> {
                           //   ) : const SizedBox(),
                           //   SizedBox(width: ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeSmall : 0),
 
-                          //   Expanded(
-                          //     child: CustomTextField(
-                          //       labelText: 'phone'.tr,
-                          //       titleText: 'enter_phone_number'.tr,
-                          //       controller: _phoneController,
-                          //       focusNode: _phoneFocus,
-                          //       nextFocus: ResponsiveHelper.isDesktop(context) ? _passwordFocus : _emailFocus,
-                          //       inputType: TextInputType.phone,
-                          //       isPhone: true,
-                          //       onCountryChanged: (CountryCode countryCode) {
-                          //         _countryDialCode = countryCode.dialCode;
-                          //       },
-                          //       countryDialCode: _countryDialCode != null ? CountryCode.fromCountryCode(Get.find<SplashController>().configModel!.country!).code
-                          //           : Get.find<LocalizationController>().locale.countryCode,
-                          //       required: true,
-                          //       validator: (value) => ValidateCheck.validatePhone(value, null),
-                          //     ),
-                          //   ),
+                            Expanded(
+                              child: CustomTextField(
+                                labelText: 'phone'.tr,
+                                titleText: 'enter_phone_number'.tr,
+                                controller: _phoneController,
+                                focusNode: _phoneFocus,
+                                nextFocus: ResponsiveHelper.isDesktop(context) ? _passwordFocus : _emailFocus,
+                                inputType: TextInputType.phone,
+                                isPhone: true,
+                                onCountryChanged: (CountryCode countryCode) {
+                                  _countryDialCode = countryCode.dialCode;
+                                },
+                                countryDialCode: _countryDialCode != null ? CountryCode.fromCountryCode(Get.find<SplashController>().configModel!.country!).code
+                                    : Get.find<LocalizationController>().locale.countryCode,
+                                required: true,
+                                validator: (value) => ValidateCheck.validatePhone(value, null),
+                              ),
+                            ),
 
-                          // ]),
+                          ]),
                           const SizedBox(height: Dimensions.paddingSizeExtraLarge),
                           // !ResponsiveHelper.isDesktop(context) ? CustomTextField(
                           //   labelText: 'email'.tr,
