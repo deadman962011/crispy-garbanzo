@@ -40,7 +40,7 @@ class SignUpScreenState extends State<SignUpScreen> {
 
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
+  // final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
@@ -146,55 +146,54 @@ class SignUpScreenState extends State<SignUpScreen> {
                           ]),
                           const SizedBox(height: Dimensions.paddingSizeExtraLarge),
 
-                          Row(children: [
-                            ResponsiveHelper.isDesktop(context) ? Expanded(
-                              child: CustomTextField(
-                                labelText: 'email'.tr,
-                                titleText: 'enter_email'.tr,
-                                controller: _emailController,
-                                focusNode: _emailFocus,
-                                nextFocus: ResponsiveHelper.isDesktop(context) ? _phoneFocus : _passwordFocus,
-                                inputType: TextInputType.emailAddress,
-                                prefixImage: Images.mail,
-                                required: true,
-                                validator: (value) => ValidateCheck.validateEmail(value),
-                              ),
-                            ) : const SizedBox(),
-                            SizedBox(width: ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeSmall : 0),
+                          // Row(children: [
+                          //   ResponsiveHelper.isDesktop(context) ? Expanded(
+                          //     child: CustomTextField(
+                          //       labelText: 'email'.tr,
+                          //       titleText: 'enter_email'.tr,
+                          //       controller: _emailController,
+                          //       focusNode: _emailFocus,
+                          //       nextFocus: ResponsiveHelper.isDesktop(context) ? _phoneFocus : _passwordFocus,
+                          //       inputType: TextInputType.emailAddress,
+                          //       prefixImage: Images.mail,
+                          //       required: true,
+                          //       validator: (value) => ValidateCheck.validateEmail(value),
+                          //     ),
+                          //   ) : const SizedBox(),
+                          //   SizedBox(width: ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeSmall : 0),
 
-                            Expanded(
-                              child: CustomTextField(
-                                labelText: 'phone'.tr,
-                                titleText: 'enter_phone_number'.tr,
-                                controller: _phoneController,
-                                focusNode: _phoneFocus,
-                                nextFocus: ResponsiveHelper.isDesktop(context) ? _passwordFocus : _emailFocus,
-                                inputType: TextInputType.phone,
-                                isPhone: true,
-                                onCountryChanged: (CountryCode countryCode) {
-                                  _countryDialCode = countryCode.dialCode;
-                                },
-                                countryDialCode: _countryDialCode != null ? CountryCode.fromCountryCode(Get.find<SplashController>().configModel!.country!).code
-                                    : Get.find<LocalizationController>().locale.countryCode,
-                                required: true,
-                                validator: (value) => ValidateCheck.validatePhone(value, null),
-                              ),
-                            ),
+                          //   Expanded(
+                          //     child: CustomTextField(
+                          //       labelText: 'phone'.tr,
+                          //       titleText: 'enter_phone_number'.tr,
+                          //       controller: _phoneController,
+                          //       focusNode: _phoneFocus,
+                          //       nextFocus: ResponsiveHelper.isDesktop(context) ? _passwordFocus : _emailFocus,
+                          //       inputType: TextInputType.phone,
+                          //       isPhone: true,
+                          //       onCountryChanged: (CountryCode countryCode) {
+                          //         _countryDialCode = countryCode.dialCode;
+                          //       },
+                          //       countryDialCode: _countryDialCode != null ? CountryCode.fromCountryCode(Get.find<SplashController>().configModel!.country!).code
+                          //           : Get.find<LocalizationController>().locale.countryCode,
+                          //       required: true,
+                          //       validator: (value) => ValidateCheck.validatePhone(value, null),
+                          //     ),
+                          //   ),
 
-                          ]),
+                          // ]),
                           const SizedBox(height: Dimensions.paddingSizeExtraLarge),
-
-                          !ResponsiveHelper.isDesktop(context) ? CustomTextField(
-                            labelText: 'email'.tr,
-                            titleText: 'enter_email'.tr,
-                            controller: _emailController,
-                            focusNode: _emailFocus,
-                            nextFocus: _passwordFocus,
-                            inputType: TextInputType.emailAddress,
-                            prefixIcon: Icons.mail,
-                            required: true,
-                            validator: (value) => ValidateCheck.validateEmptyText(value, null),
-                          ) : const SizedBox(),
+                          // !ResponsiveHelper.isDesktop(context) ? CustomTextField(
+                          //   labelText: 'email'.tr,
+                          //   titleText: 'enter_email'.tr,
+                          //   controller: _emailController,
+                          //   focusNode: _emailFocus,
+                          //   nextFocus: _passwordFocus,
+                          //   inputType: TextInputType.emailAddress,
+                          //   prefixIcon: Icons.mail,
+                          //   required: true,
+                          //   validator: (value) => ValidateCheck.validateEmptyText(value, null),
+                          // ) : const SizedBox(),
                           SizedBox(height: !ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeLarge : 0),
 
                           Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -355,7 +354,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         String? deviceToken = await authController.saveDeviceToken();
 
         SignUpBodyModel signUpBody = SignUpBodyModel(
-          fName: firstName, lName: lastName, email: email, phone: numberWithCountryCode,
+          fName: firstName, lName: lastName, email: '${numberWithCountryCode}@shamel.website', phone: numberWithCountryCode,
           password: password, refCode: referCode, deviceToken: deviceToken,
         );
         authController.registration(signUpBody).then((status) async {
